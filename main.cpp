@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <format>
 #include <list>
 #include <numeric>
 #include <unordered_map>
@@ -280,11 +281,11 @@ public:
         if (order->GetSide() == Side::Buy) {
             auto &orders = bids_[order->GetPrice()];
             orders.push_back(order);
-            iterator = std::next(orders.begin(), orders.size() - 1);
+            iterator = std::prev(orders.end());
         } else {
             auto &orders = asks_[order->GetPrice()];
             orders.push_back(order);
-            iterator = std::next(orders.begin(), orders.size() - 1);
+            iterator = std::prev(orders.end());
         }
 
         orders_.insert({
