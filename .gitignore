@@ -1,3 +1,14 @@
-.idea
-CMakeLists.txt
-cmake-build-debug
+build/
+cmake-build-*/
+
+.idea/
+.vscode/
+*.swp
+*.wal
+*.swo
+*~
+
+.DS_Store
+Thumbs.db
+
+*.log
